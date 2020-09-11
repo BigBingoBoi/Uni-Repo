@@ -1,0 +1,10 @@
+[workspace]
+restore_data_on_startup = True
+save_data_on_exit = True
+save_history = True
+save_non_project_files = False
+
+[main]
+version = 0.2.0
+recent_files = ['Week6Tutorial\\io_data_module.py', 'Week6Tutorial\\Week6Tutorial_Question1-2.py', 'Week6Tutorial\\Week6Tutorial_Question3.py', 'Assignment 1\\NearestNeighbourClassifier.py', 'Assignment 1\\io_data_module.py']
+
