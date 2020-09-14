@@ -47,7 +47,6 @@ def display_data(data_list, xi=0, yi=1, colour='red', shape='circle', canvas=Non
     for sample in data_list:
         x = sample[xi]
         y = sample[yi]
-        print
         x = x*sx + tx 
         y = y*sy + ty
         if canvas != None:
@@ -79,29 +78,24 @@ def display_data(data_list, xi=0, yi=1, colour='red', shape='circle', canvas=Non
 #                 canvas.create_line(x, y, a ,b, fill = colour)
 # #end of function
   
-# add new line function here  
-def draw_lines_from_centre_to_samples(drawList, ix=0, iy=1, colour='grey', 
+# Function to draw lines from each sample to it's respective cluster centre              
+def draw_lines_from_centre_to_samples(drawList, xi=0, yi=1, colour='grey', 
                                       canvas=None, s=150, tx=300, ty=200):
     for a in drawList: # for each cluster
-        print("\nDrawing lines to cluster #", drawList.index(a))
+        print("Drawing cluster#:", drawList.index(a))
         for b in a: # for each (sample, centre) tuple
-            sample = b[ix]
-            cluster = b[iy]
-            print("sample:", sample)
-            print("cluster:", cluster)
-            sX = sample[ix]
-            sY = sample[iy]
-            cX = cluster[ix]
-            cY = cluster[iy]
+            s = b[xi]
+            c = b[yi]
+            sX = s[xi]
+            sY = s[yi]
+            cX = c[xi]
+            cY = c[yi]
             sX = sX*s + tx
             sY = sY*s + ty
             cX = cX*s + tx
             cY = cY*s + ty
-            if canvas != None:
-                # canvas.create_line(x, y, a ,b, fill = colour)
-                canvas.create_line(sX, sY, cX, cY, fill = colour)
-#end of function
-                
+            canvas.create_line(sX, sY, cX, cY, fill = colour)
+#end of function                
             
 #Function to transform data to display on canvas
 def transform_data_for_canvas_display(data_list, idx=0, idy=1, canvas_width=800, canvas_height=600):

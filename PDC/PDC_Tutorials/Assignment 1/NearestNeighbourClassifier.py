@@ -61,6 +61,11 @@ with open('unknown_and_labeled_red_blue_samples.txt', 'w') as f:
     for z in blueList:
         f.write(str(z) + "\n")
 
+
+# =============================================================================
+# Displaying the data
+# =============================================================================
+
 # Create window and canvas
 top = tkinter.Tk()
 C = tkinter.Canvas(top, bg = "white", height = 720, width = 900)
