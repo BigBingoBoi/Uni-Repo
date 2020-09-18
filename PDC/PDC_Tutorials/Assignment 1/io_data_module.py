@@ -27,6 +27,17 @@ def read_data_file(filename):
     return dataset
     # End of function
 
+#Function to generate K cluster centres at random
+def generate_K_cluster_centres(K, D):
+    cluster_centre_list = []
+    for k in range(K):
+        cluster_centre = []
+        for d in range(D):
+            cluster_centre.append(k + d)
+        cluster_centre_list.append(cluster_centre)
+    return cluster_centre_list
+#end of function
+
             
 # Function to draw data
 def show_data(drawing_list, xi = 0, yi = 1, fillColour = None,
@@ -87,8 +98,6 @@ def draw_lines_from_centre_to_samples(drawList, ix=0, iy=1, colour='grey',
         for b in a: # for each (sample, centre) tuple
             sample = b[ix]
             cluster = b[iy]
-            print("sample:", sample)
-            print("cluster:", cluster)
             sX = sample[ix]
             sY = sample[iy]
             cX = cluster[ix]
